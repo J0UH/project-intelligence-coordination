@@ -24,7 +24,7 @@ Agents lose context and project tools lose reasoning. Atlas joins the two while 
 ## System shape
 
 ```mermaid
-flowchart LR
+flowchart TD
     n0["Project state"]
     n1["Context assembly"]
     n2["Agent routing"]
