@@ -1,16 +1,18 @@
+[← All systems](https://github.com/J0UH) · [Agentic systems](https://github.com/J0UH/agentic-systems)
+
 <p align="center">
-  <img src="assets/hero.png" alt="Atlas project intelligence system illustration" width="100%" />
+  <img src="assets/hero.webp" alt="A sparse dependency graph reveals one continuous violet critical path" width="100%" />
 </p>
 
-# Atlas project intelligence
+# Project intelligence and coordination
 
-Atlas turns project work into a system an agent can reason about without replacing the people responsible for it. The useful unit is not a chat message. It is durable project state with ownership, evidence, dependencies, and a clear next action.
-
-[Discuss a similar system](mailto:ju@jomena.group?subject=Discuss%20Atlas%20project%20intelligence) | [Book a technical call](mailto:ju@jomena.group?subject=Book%20a%20technical%20call%20about%20Atlas%20project%20intelligence)
+Complex work becomes easier to steer when decisions, dependencies, evidence, ownership, and next actions live in one reliable project picture. People remain responsible while assistants help keep that picture current and useful.
 
 ## The engineering problem
 
 Agents lose context and project tools lose reasoning. Atlas joins the two while keeping authority with the team. The system has to know what changed, which evidence supports it, and when to stop for a decision.
+
+
 
 ## What the system covers
 
@@ -25,17 +27,16 @@ Agents lose context and project tools lose reasoning. Atlas joins the two while 
 
 ```mermaid
 flowchart TD
-    n0["Project state"]
-    n1["Context assembly"]
-    n2["Agent routing"]
-    n3["Tools"]
-    n4["Human decision"]
-    n5["Evidence ledger"]
-    n0 --> n1
-    n1 --> n2
-    n2 --> n3
-    n3 --> n4
-    n4 --> n5
+accTitle: Project intelligence and coordination
+accDescr: Project sources form a dependency graph that guides agent proposals. A person gates state-changing tools, and new evidence can recompute the graph instead of freezing an obsolete plan.
+    sources["Project sources"] --> graph["Dependency graph"]
+    graph --> route["Agent routing"]
+    route --> proposal["Proposed state change"]
+    proposal --> authority{"Human authority?"}
+    authority -->|Approved| tools["Bounded tools"]
+    authority -->|Revise| graph
+    tools --> evidence["Evidence ledger"]
+    evidence -->|New dependency| graph
 ```
 
 ## Build notes
@@ -44,8 +45,8 @@ flowchart TD
 - Let agents propose state changes through bounded tools.
 - Make blockers and uncertainty visible instead of manufacturing progress.
 
-<sub>Built under the Aryze umbrella. The underlying source and company IP remain private and owned by Aryze. Delivery involved people across engineering, product, operations, compliance, and design. Open-source foundations retain their original attribution and licences.</sub>
+<sub>Public overview only. Source code, customer data, credentials, and private operating details are not included.</sub>
 
 ## Talk through a similar problem
 
-If you are trying to build, untangle, or ship a system in this area, [send me a note](mailto:ju@jomena.group?subject=I%20need%20help%20with%20Atlas%20project%20intelligence). If the problem needs a deeper technical conversation, [book a call by email](mailto:ju@jomena.group?subject=Book%20a%20technical%20call%20about%20Atlas%20project%20intelligence).
+Working on something similar? [Tell me about it](mailto:ju@jomena.group?subject=Project%20intelligence%20and%20coordination).
